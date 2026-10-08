@@ -42,6 +42,7 @@ flowchart TD
     G1 & G2 & G3 --> H[Automated Technical ARB RFC Generator]
     H --> I[Cross-Functional Stage-Gate Board: Legal + Security + ARB + Procurement]
     I --> J[Approved for Production Build & Operational Handoff]
+```
 
 
 ⚙️ Core Architectural Capabilities
