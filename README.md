@@ -4,6 +4,7 @@
 [https://img.shields.io/badge/UI-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white]
 [https://img.shields.io/badge/License-MIT-green?style=for-the-badge]
 [https://img.shields.io/badge/Domain-Enterprise_AI_Governance-6f42c1?style=for-the-badge]
+
 > An open-source program operating system that replaces "Shadow AI" and review gridlock with standardized intake, multi-tier risk classification, automated Architecture Review Board (ARB) RFC generation, and cross-functional stage-gate transparency.
 
 ---
