@@ -45,43 +45,53 @@ flowchart TD
 ```
 
 
-⚙️ Core Architectural Capabilities
-1. Multi-Tier Risk Classification Engine
+---
+
+## 🛡️ Enterprise Risk Tiering Matrix
+
+| Risk Tier | Data Sensitivity | Autonomous Actions | Required Governance & Approvals |
+| :--- | :--- | :--- | :--- |
+| **Tier 1 (Critical)** | Restricted PII / Financial Data | Enabled (Write / Financial) | Mandatory InfoSec Pen-Test, Signed Vendor DPA, ARB Approval |
+| **Tier 2 (High)** | Confidential Corporate Data | Read-Only / Advisory | Legal Zero-Retention Verification, InfoSec Cloud Audit |
+| **Tier 3 (Moderate)** | Internal Code / Knowledge Base | Local Agent Execution | Self-Hosted Open-Source Models (Ollama/vLLM), Fast-Track Review |
+| **Tier 4 (Low)** | Public Documentation | None | Automated Intake Registration |
+
+---
+
+## ⚙️ Core Architectural Capabilities
+
+### 1. Multi-Tier Risk Classification Engine
 Evaluates submissions across data sensitivity, autonomous permissions, and model hosting boundaries to assign objective governance gates.
 
-2. Automated Architecture Review Board (ARB) RFC Generation
-Automatically translates business requests into engineering RFC (Request for Comments) specifications detailing:
+### 2. Automated Architecture Review Board (ARB) RFC Generation
+Automatically translates business requests into engineering **RFC (Request for Comments)** specifications detailing:
+* Business problem and measurable outcome targets.
+* Data flow boundaries and network egress isolation.
+* Mandatory **Graceful Degradation Plans** (deterministic rule-based fallbacks during LLM outages).
+* Multi-discipline sign-off matrices.
 
-Business problem and measurable outcome targets.
-
-Data flow boundaries and network egress isolation.
-
-Mandatory Graceful Degradation Plans (deterministic rule-based fallbacks during LLM outages).
-
-Multi-discipline sign-off matrices.
-
-3. Stage-Gate Governance Pipeline
+### 3. Stage-Gate Governance Pipeline
 A unified dashboard tracking four milestone review gates:
+1. **Intake & Scope Definition**
+2. **Security & Data Privacy Audit**
+3. **Architecture Review Board (ARB) Technical RFC Review**
+4. **Operational Readiness & Production Release Gating**
 
-Intake & Scope Definition
+---
 
-Security & Data Privacy Audit
+## 🛠️ Tech Stack
 
-Architecture Review Board (ARB) Technical RFC Review
+* **Engine:** Python 3.9+, Pydantic v2, Pandas
+* **Portal & Dashboard:** Streamlit
+* **Local Inference (Optional):** Ollama (`llama3.2:3b`)
+* **License:** MIT License
 
-Operational Readiness & Production Release Gating
+---
 
-🛠️ Tech Stack
-Engine: Python 3.9+, Pydantic v2, Pandas
+## 🚀 Quickstart
 
-Portal & Dashboard: Streamlit
-
-Local Inference (Optional): Ollama (llama3.2:3b)
-
-License: MIT License
-
-🚀 Quickstart
-1. Clone & Set Up
+### 1. Clone & Set Up
+```bash
 git clone [https://github.com/soniran635/ai-program-os.git](https://github.com/soniran635/ai-program-os.git)
 cd ai-program-os
 
@@ -92,6 +102,7 @@ pip install -r requirements.txt
 
 2. Launch the Portal
 streamlit run ui/governance_portal.py
+
 Open http://localhost:8501 to test the intake form, evaluate risk tiers, and generate Architecture Review Board RFCs in real time.
 
 📂 Repository Structure
